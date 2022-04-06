@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더 애니매이트</title>
+    <script src="js/jquery-1.12.3.js"></script>
+    <script src="js/jquery.js"></script>
+    <style>
+        
+        *{margin: 0; padding: 0;}
+
+        #wrap{
+            width: 100%;
+            position: relative;
+            height: 1200px;
+        }
+        header{
+            width: 100%; height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            background-color: lightpink;
+        }
+        #in_header{
+            width: 75rem;
+            height: 6rem;
+            background-color: lightblue;
+            position: fixed;
+        }
+
+        .back{
+            width: 3rem;
+            height: 3rem;
+            background-color: lightcoral;
+            float: left;
+        }
+        .animate{
+            width: 10rem;
+            height: 3rem;
+            background-color: lightgoldenrodyellow;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .group{
+            float: right;
+            width: 6rem;
+            height: 3rem;
+        }
+        .left{
+            float: left;
+            width: 3rem;
+            height: 3rem;
+            background-color: lightgray;
+        }
+        .right{
+            float: right;
+            width: 3rem;
+            height: 3rem;
+            background-color: lightgreen;
+        }
+
+    </style>
+    <script>
+   
+       
+    $(document).scroll(function(){
+       var win_scr = $(window).scrollTop();
+       //console.log('스크롤 위치값 : ' + win_scr);
+
+         console.log(win_scr);
+         if(win_scr > 200){
+             $('#in_header').animate({
+                 height: '3rem'
+             });
+             $('.animate').animate({
+                 top: 0,
+                 left: '200px'
+             });
+             
+            }else if(win_scr <= 50){
+                console.log('실행즁아아아아아아아아아아아아아아아아아아!!!!!');
+                $('#in_header').animate({
+                height: '6rem'
+                 });
+                $('.animate').animate({
+                bottom: 0,
+                left: 0
+                 });
+                }
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="in_header">
+                <div class="back">뒤</div>
+                <div class="animate">이걸 움직여야함</div>
+                <div class="group">
+                    <div class="left">왼</div>
+                    <div class="right">오</div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이드</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="inner">
+                <img src="img/photo_1.jpg">
+            </div>
+            <div class="inner">
+                <img src="img/photo_2.jpg">
+            </div>
+            <div class="inner">
+                <img src="img/photo_3.jpg">
+            </div>
+        </div>
+    </div>
+
+    <button class="btn_1">1</button>
+    <button class="btn_2">2</button>
+    <button class="btn_3">3</button>
+
+
+    <script>
+        // 버튼 2를 누르면
+        // transform : translate(-100vw)
+        document.querySelector('.btn_1').addEventListener('click',function(){
+            document.querySelector('.container').style.transform = 'translate(0vw)';
+        });
+            document.querySelector('.btn_2').addEventListener('click',function(){
+            document.querySelector('.container').style.transform = 'translate(-100vw)';
+        });
+            document.querySelector('.btn_3').addEventListener('click',function(){
+            document.querySelector('.container').style.transform = 'translate(-200vw)';
+        });
+            
+
+        
+    </script>
+</body>
+</html>
